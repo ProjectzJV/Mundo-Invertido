@@ -1,8 +1,9 @@
+/***  FONTS ***/
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
 
-/*** VARIABLES & THEMES ***/
+/***  VARIABLES & THEMES ***/
 
 :root {
   --primary-color: #cf0f0f;
@@ -49,7 +50,7 @@
 .dark-theme button,
 .dark-theme h1,
 .dark-theme h2,
-.dark-theme h3{
+.dark-theme h3 {
   letter-spacing: 5px;
   font-weight: normal;
 }
@@ -58,14 +59,16 @@
   transform: rotateZ(180deg) scaleX(-1);
 }
 
+/***  GENERIC STYLES ***/
 
-
-/*-----Estilos Genericos------*/
-
-*{
+* {
   margin: 0;
   box-sizing: border-box;
   transition: 1s;
+}
+
+body {
+  background: var(--page-background);
 }
 
 h1,
@@ -78,18 +81,18 @@ h3 {
   margin-bottom: 40px;
 }
 
-p{
+p {
   color: var(--highlight-color);
 }
 
 p,
 input,
 textarea,
-label{
+label {
   font-family: "Libre Baskerville", serif;
 }
 
-button{
+button {
   padding: 16px 32px;
   background-color: transparent;
   font-weight: 900;
@@ -100,38 +103,60 @@ button{
   transition: background 1s;
 }
 
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+main::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--page-background) no-repeat,
+    url("../images/backgrounds/florest.png") no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
 input,
 textarea {
   border: 2px solid var(--primary-color-contrast);
   background-color: var(--field-background-color);
   color: var(--primary-color-contrast);
   padding: 8px;
-  margin-bottom: 24px;
-  font-size: 1rem;
 }
 
-label{
+input,
+textarea {
+  margin-bottom: 24px;
+}
+
+label {
   margin-bottom: 8px;
 }
 
 input:focus-visible,
 textarea:focus-visible {
   outline: none;
-  background-color: black;
+  border-color: black;
 }
 
-/*---------------Header Styles-------------*/
+/*** HEADER STYLES ***/
 
 header {
   background-color: var(--header-background-color);
   min-height: 850px;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
 
-header::before{
+header::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -144,14 +169,14 @@ header::before{
   opacity: 0.2;
 }
 
-.header-content{
+.header-content {
   max-width: 700px;
   padding: 80px 20px;
   text-align: center;
   z-index: 2;
 }
 
-.header-content img{
+.header-content img {
   width: 80%;
 }
 
@@ -159,35 +184,34 @@ header::before{
   margin: 30px 0 50px;
 }
 
-.header-content button{
+.header-content button {
   border: 3px solid var(--primary-color);
   color: var(--primary-color);
 }
 
-.header-content button:hover{
+.header-content button:hover {
   background-color: var(--primary-color);
   color: var(--primary-color-contrast);
-  transition: background 1s;
 }
 
-/*----------Personagens-----------*/
+/*** WORLD CHARACTERS STYLES ***/
 
-.world-characters{
+.world-characters {
   width: 100%;
   max-width: 900px;
   position: absolute;
 }
 
-.world-characters#top-characters{
+.world-characters#top-characters {
   height: 100%;
   background-color: var(--character-top-image-color);
   bottom: -3px;
 
-  mask: var(--character-top-image-src) bottom / 100% no-repeat;
+  mask: var(--character-top-image-src) bottom / contain no-repeat;
   -webkit-mask: var(--character-top-image-src) bottom / 100% no-repeat;
 }
 
-.world-characters#bottom-characters{
+.world-characters#bottom-characters {
   height: 500px;
   background-color: var(--character-bottom-image-color);
   top: 3px;
@@ -198,29 +222,7 @@ header::before{
   -webkit-mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
 }
 
-
-/*------------Main Styles--------*/
-
-main {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-main::before{
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: var(--page-background) no-repeat,
-    url("../images/backgrounds/florest.png") no-repeat;
-  background-size: cover;
-  z-index: -1;
-}
-
-
-/*------------Sections styles------*/
+/*** SECTIONS STYLES ***/
 
 section {
   display: flex;
@@ -228,13 +230,13 @@ section {
   margin-bottom: 95px;
 }
 
-/*------------Section 01 Invected world-----------*/
+/* Section 01 - Inverted World */
 
-.container{
+.container {
   max-width: 1200px;
 }
 
-#section-inverted-world{
+#section-inverted-world {
   align-items: center;
 }
 
@@ -242,18 +244,18 @@ section {
   width: 50%;
 }
 
-#section-inverted-world .section-texts h2{
+#section-inverted-world .section-texts h2 {
   max-width: 300px;
 }
 
-/*------------Section 02 Stranger Things Trailer-----------*/
+/* Section 02 - Stranger Things Trailer */
 
 #section-stranger-things-trailer .section-texts {
   width: 50%;
   text-align: right;
 }
 
-#section-stranger-things-trailer .section-texts h2{
+#section-stranger-things-trailer .section-texts h2 {
   max-width: 425px;
   display: inline-block;
 }
@@ -274,17 +276,19 @@ section {
   border-image-slice: 10;
 }
 
-#section-stranger-things-gallery{
+/* Section 03 - Stranger Things Gallery */
+
+#section-stranger-things-gallery {
   width: 100%;
-  justify-content: center;
   background: var(--background-lamp-image) 120% / 50% no-repeat;
+  justify-content: center;
 }
 
 #section-stranger-things-gallery .container {
   width: 100%;
 }
 
-#section-stranger-things-gallery .container h2{
+#section-stranger-things-gallery .container h2 {
   width: 800px;
 }
 
@@ -302,14 +306,14 @@ section {
   box-sizing: initial;
 }
 
-#section-stranger-things-gallery .gallery-image img{
+#section-stranger-things-gallery .gallery-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border: 10px solid var(--highlight-color);
 }
 
-/*------------Section 03 Dungeons & Dragons Form-----------*/
+/* Section 04 - Dungeons & Dragons Form */
 
 #section-form {
   flex-direction: column;
@@ -318,25 +322,28 @@ section {
   text-align: center;
 }
 
-#section-form h2{
+#section-form h2 {
   width: 600px;
 }
 
-#section-form .form-content h3{
+#section-form .form-content h3 {
   color: var(--highlight-color);
-  flex-basis: 30%;
-  text-align: left;
-  margin: 0;
 }
 
-#section-form .form-content h3 span{
+#section-form .form-content h3 span {
   color: var(--primary-color);
 }
 
-#section-form .form-content{
+#section-form .form-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#section-form .form-content h3 {
+  flex-basis: 30%;
+  text-align: left;
+  margin: 0;
 }
 
 #section-form .form-container {
@@ -373,15 +380,14 @@ section {
   align-self: center;
 }
 
-#section-form .form-container form button::hover {
+#section-form .form-container form button:hover {
   background-color: var(--primary-color-contrast);
   color: var(--field-background-color);
 }
 
+/*** FOOTER STYLES ***/
 
-/*-------- Footer Syles ------------*/
-
-footer{
+footer {
   padding: 60px 0;
   background-color: var(--footer-background-color);
   text-align: center;
@@ -402,7 +408,7 @@ footer::after {
   content: "";
   width: 300px;
   height: 200px;
-  background: url(../images/footer/tape.svg) no-repeat;
+  background: url("../images/footer/tape.svg") no-repeat;
   background-size: contain;
   position: absolute;
   bottom: -30px;
